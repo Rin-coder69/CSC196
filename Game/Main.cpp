@@ -21,11 +21,19 @@
 //		std::cout << gaia::Random::getRandomInt(5) << std::endl;	
 //	}
 ////}
-
+#include "Math/Math.h"
+#include "Math/Vector2.h"
 #include <SDL3/SDL.h>
 #include <iostream>
+#include "Renderer/rendeder.h"
 
 int main(int argc, char* argv[]) {
+	gaia::Renderer renderer;
+
+    renderer Initalize();
+
+	renderer.CreateWindow("gaia Engine", 1280, 1024);
+
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window* window = SDL_CreateWindow("SDL3 Project", 1280, 1024, 0);
@@ -45,6 +53,8 @@ int main(int argc, char* argv[]) {
 
     SDL_Event e;
     bool quit = false;
+
+	vec2 v(38, 40);
 
     //Lines
     
@@ -68,9 +78,19 @@ int main(int argc, char* argv[]) {
                 quit = true;
             }
         }
+        renderer.SetColor(0, 0, 0);
+		renderer.Clear();
+
+		renderer.SetColor(gaia::random::getRandomInt(256), gaia::random::getRandomInt(256), gaia::random::getRandomInt(256));
+        renderer.DrawLine(gaia::random::getRandomFloat()* 1200, gaia::random::getRandomFloat() * 1024)
+        renderer.Present();
+
+
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Set render draw color to black
         SDL_RenderClear(renderer); // Clear the renderer
+
+		renderer.DrawPoint(100, 100); // Draw a point at (100, 100)
 
         SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Set render draw color to green
         
