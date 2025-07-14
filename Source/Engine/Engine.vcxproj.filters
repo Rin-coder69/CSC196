@@ -12,9 +12,6 @@
     <Filter Include="Source\Core">
       <UniqueIdentifier>{95f8b7d9-09e7-4061-be80-74b5ce0e8cf6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Core\Math">
-      <UniqueIdentifier>{81b51b61-8807-41fc-92d7-7a5a0b248650}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Render">
       <UniqueIdentifier>{eaafa797-9509-4bc2-a73c-93b23874a400}</UniqueIdentifier>
     </Filter>
@@ -23,6 +20,9 @@
     </Filter>
     <Filter Include="Source\Audio">
       <UniqueIdentifier>{0bdde1fe-f847-4afe-8a03-8904f205ac3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Math">
+      <UniqueIdentifier>{81b51b61-8807-41fc-92d7-7a5a0b248650}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -38,7 +38,7 @@
     <ClCompile Include="Input\InputSystem.cpp">
       <Filter>Source\Input</Filter>
     </ClCompile>
-    <ClCompile Include="AudioSystem.cpp">
+    <ClCompile Include="Audio\AudioSystem.cpp">
       <Filter>Source\Audio</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +50,7 @@
       <Filter>Source\Core</Filter>
     </ClInclude>
     <ClInclude Include="Math\math.h">
-      <Filter>Source\Core\Math</Filter>
+      <Filter>Source\Math</Filter>
     </ClInclude>
     <ClInclude Include="core\file.h">
       <Filter>Source\Core</Filter>
@@ -59,19 +59,19 @@
       <Filter>Source\Render</Filter>
     </ClInclude>
     <ClInclude Include="Math\vector2.h">
-      <Filter>Source\Core\Math</Filter>
+      <Filter>Source\Math</Filter>
     </ClInclude>
     <ClInclude Include="Input\Inputsystem.h">
       <Filter>Source\Input</Filter>
     </ClInclude>
-    <ClInclude Include="AudioSystems.h">
+    <ClInclude Include="vector3.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\AudioSystem.h">
       <Filter>Source\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="vector3.h">
-      <Filter>Source\Core\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Core.StringHelper.h">
-      <Filter>Source\Core\Math</Filter>
+    <ClInclude Include="core\StringHelper.h">
+      <Filter>Source\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

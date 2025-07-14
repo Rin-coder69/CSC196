@@ -151,17 +151,17 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AudioSystem.cpp" />
+    <ClCompile Include="Audio\AudioSystem.cpp" />
     <ClCompile Include="core\Time.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Input\InputSystem.cpp" />
     <ClCompile Include="Renderer\rendeder.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioSystems.h" />
-    <ClInclude Include="Core.StringHelper.h" />
+    <ClInclude Include="Audio\AudioSystem.h" />
     <ClInclude Include="core\file.h" />
     <ClInclude Include="core\random.h" />
+    <ClInclude Include="core\StringHelper.h" />
     <ClInclude Include="core\Time.h" />
     <ClInclude Include="Input\Inputsystem.h" />
     <ClInclude Include="Math\math.h" />

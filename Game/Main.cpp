@@ -1,26 +1,21 @@
 #include "Math/Math.h"
 #include "Math/Vector2.h"
-#include <SDL3/SDL.h>
-#include <iostream>
 #include "Renderer/rendeder.h"
 #include "core/random.h"
-#include <vector>
 #include "core/Time.h"
 #include "Input/InputSystem.h"
-#include "Audio/AudioSystems.h"
+#include "Audio/AudioSystem.h"
+
+#include <SDL3/SDL.h>
+#include <vector>
+#include <iostream>
 #include <fmod.hpp>
 
 std::vector<gaia::vec2> points;
 int main(int argc, char* argv[]) {
 
     //itialize engine systems
-      // create audio system
-    FMOD::System* audio;
-    FMOD::System_Create(&audio);
-
-    void* extradriverdata = nullptr;
-    audio->init(32, FMOD_INIT_NORMAL, extradriverdata);
-
+    // create audio system
 
     gaia::Renderer renderer;
 	gaia::Time time;
@@ -31,14 +26,10 @@ int main(int argc, char* argv[]) {
 	gaia::InputSystem inputSystem;
 	inputSystem.Initialize();
 
-    std::vector<FMOD::Sound*> sounds;
-    audio->createSound("bass.wav", FMOD_DEFAULT, 0, sound);
-    sounds.push_back(sound);
+    gaia::AudioSystem audio;
+	audio.Initialize();
 
-    audio->createSound("snare.wav", FMOD_DEFAULT, 0, &sound);
-    sounds.push_back(sound);
-
-
+	audio.AddSound("bass.wav", "bass");
 
     SDL_Event e;
     bool quit = false;
@@ -49,17 +40,9 @@ int main(int argc, char* argv[]) {
     };
 
         gaia::vec2 v(38, 40);
-
-
-
         // Define a rectangle
         SDL_FRect greenSquare{ 270, 190, 200, 200 };
         //Main loop every frame
-          // create audio system
-        FMOD::Sound* sound = nullptr;
-        audio->createSound("test.wav", FMOD_DEFAULT, 0, &sound);
-
-        audio->playSound(sound, 0, false, nullptr);
 
         while (!quit) {
 			time.Tick();
@@ -71,26 +54,27 @@ int main(int argc, char* argv[]) {
             }
 
             //update engine systems
-            audio->update();
+            audio.Update();
 			inputSystem.Update();
+            
             //get input
-            if(inputSystem.GetKeyReleased(SDL_SCANCODE_A)) {
-                std::cout << "pressed\n";
+            if(inputSystem.GetKeyDown(SDL_SCANCODE_A)) {
+				audio.PlaySound("bass");
 			}
 
-            if (inputSystem.getMouseButtonDown(gaia::InputSystem::MouseButton::LEFT)) {
-                gaia::vec2 position = inputSystem.GetMousePosition();
-                if (points.empty()) points.push_back(position);
-                else if ((position - points.back()).length() > 10) points.push_back(position);
-            }
-            if (inputSystem.getMouseButtonPressed(gaia::InputSystem::MouseButton::LEFT)) {
-                std::cout << "Left mouse button pressed" << std::endl;
-            }
+            //if (inputSystem.getMouseButtonDown(gaia::InputSystem::MouseButton::LEFT)) {
+            //    gaia::vec2 position = inputSystem.GetMousePosition();
+            //    if (points.empty()) points.push_back(position);
+            //    else if ((position - points.back()).length() > 10) points.push_back(position);
+            //}
+            //if (inputSystem.getMouseButtonPressed(gaia::InputSystem::MouseButton::LEFT)) {
+            //    std::cout << "Left mouse button pressed" << std::endl;
+            //}
 
 
     
 			gaia::vec2 mouse =inputSystem.GetMousePosition();
-			std::cout << mouse.x << " " << mouse.y << std::endl;
+			//std::cout << mouse.x << " " << mouse.y << std::endl;
             //draw 
             renderer.SetColor(0, 0, 0);
             renderer.Clear();
@@ -122,7 +106,7 @@ int main(int argc, char* argv[]) {
 
         renderer.ShutDown();
 
-        audio Shutd
+        audio.ShutDown();
 
         return 0;
     }
