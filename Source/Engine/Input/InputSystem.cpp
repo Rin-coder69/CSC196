@@ -6,10 +6,10 @@ namespace gaia {
 		int numKeys;
 		const bool* keyboardState = SDL_GetKeyboardState(&numKeys);
 
-		m_KeyboardState.resize(numKeys);
+		m_keyboardState.resize(numKeys);
 
-		std::copy(keyboardState, keyboardState + numKeys, m_KeyboardState.begin());
-		m_prevKeyboardState = m_KeyboardState;
+		std::copy(keyboardState, keyboardState + numKeys, m_keyboardState.begin());
+		m_prevKeyboardState = m_keyboardState;
 
 		SDL_GetMouseState(&m_mousePosition.x, &m_mousePosition.y);
 		m_prevMousePosition = m_mousePosition;
@@ -22,9 +22,9 @@ namespace gaia {
 	}
 
 	void InputSystem::Update() {
-		m_prevKeyboardState = m_KeyboardState;
+		m_prevKeyboardState = m_keyboardState;
 		const bool* keyboardState = SDL_GetKeyboardState(nullptr);
-		std::copy(keyboardState, keyboardState + m_KeyboardState.size(), m_KeyboardState.begin());
+		std::copy(keyboardState, keyboardState + m_keyboardState.size(), m_keyboardState.begin());
 
 		//mouse state
 		m_prevMouseButtonState = m_mouseButtonState;

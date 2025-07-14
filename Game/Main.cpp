@@ -62,14 +62,14 @@ int main(int argc, char* argv[]) {
 				audio.PlaySound("bass");
 			}
 
-            //if (inputSystem.getMouseButtonDown(gaia::InputSystem::MouseButton::LEFT)) {
-            //    gaia::vec2 position = inputSystem.GetMousePosition();
-            //    if (points.empty()) points.push_back(position);
-            //    else if ((position - points.back()).length() > 10) points.push_back(position);
-            //}
-            //if (inputSystem.getMouseButtonPressed(gaia::InputSystem::MouseButton::LEFT)) {
-            //    std::cout << "Left mouse button pressed" << std::endl;
-            //}
+            if (inputSystem.GetMouseButtonDown(gaia::InputSystem::MouseButton::LEFT)) {
+                gaia::vec2 position = inputSystem.GetMousePosition();
+                if (points.empty()) points.push_back(position);
+                else if ((position - points.back()).length() > 10) points.push_back(position);
+            }
+            if (inputSystem.GetMouseButtonPressed(gaia::InputSystem::MouseButton::LEFT)) {
+                std::cout << "Left mouse button pressed" << std::endl;
+            }
 
 
     
