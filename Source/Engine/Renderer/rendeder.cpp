@@ -21,16 +21,12 @@ namespace gaia
 		SDL_RenderPoint(renderer, x, y);
     }
 
-    bool Renderer::CreateWindow(const std::string& name, int width, int height)
-    {
-        return false;
-    }
 
 
 
 
-    bool Renderer::CreateWindow(const std::string& name, int width, int height)
-    {window = SDL_CreateWindow(name.c_str(), width, height, 0);
+    bool Renderer::CreateWindow(const std::string& name, int width, int height)    {
+        window = SDL_CreateWindow(name.c_str(), width, height, 0);
     if (window == nullptr) {
         std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
         SDL_Quit();
@@ -44,7 +40,7 @@ namespace gaia
         SDL_DestroyWindow(window);
         SDL_Quit();
         return false;
-    }
+        }
     }
 
     void Renderer::SetColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
@@ -71,5 +67,6 @@ namespace gaia
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);
         SDL_Quit();
-    };
+    }
+  
 }

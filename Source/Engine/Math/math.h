@@ -1,5 +1,7 @@
 #pragma once
 #include <algorithm>
+#include <SDL3/SDL.h>
+#include <cmath>
 namespace gaia {
 	namespace math {
 		constexpr float PI = 3.14159265358979323846f;
@@ -23,6 +25,10 @@ namespace gaia {
 		using std::min;
 		using std::max;
 		using std::clamp;
+		using std::sqrtf;
+		using std::sqrt;
+		using std::cos;
+		using std::sin;
 
 
 	}

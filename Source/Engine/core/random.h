@@ -31,7 +31,8 @@ namespace gaia {
 		 /// </summary>
 		 /// <returns>A random float value in the range [0, 1].</returns>
 		 inline float getRandomFloat() {
-			return rand()/RAND_MAX;
+			 
+			return (float)rand()/RAND_MAX;
 		}
 	}
 }
