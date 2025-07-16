@@ -29,7 +29,12 @@ namespace gaia {
 		using std::sqrt;
 		using std::cos;
 		using std::sin;
+		using std::atan2;
+		using std::atan2f;
+		using std::cosf;
+		using std::sinf;
 
 
-	}
+
+	};
 }
