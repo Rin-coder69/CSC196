@@ -18,4 +18,8 @@ namespace gaia {
 				renderer.DrawLine(p1.x, p1.y, p2.x, p2.y);
 			}
 	}
+	void Model::draw(Renderer& renderer, const Transform& transform)
+	{
+		draw(renderer, transform.position, transform.rotation, transform.scale);
+	}
 }

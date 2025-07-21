@@ -1,13 +1,14 @@
 #pragma once
 #include "Math/transform.h"
 #include "../Renderer/Model.h"
+#include <memory>
 namespace gaia {
 	class Actor {
 	public:
 		Actor() = default;
-		Actor(const Transform& transform, class Model* model) :
+		Actor(const Transform& transform, class std:: shared_ptr<Model>models) :
 			m_transform{ transform },
-			m_model{ model }
+			m_model{models}
 		{
 		}
 
@@ -23,7 +24,6 @@ namespace gaia {
 
 	protected:
 		Transform m_transform;
-
-		Model* m_model;
+		std::shared_ptr<Model> m_model; // Use shared_ptr for better memory management
 	};
 }

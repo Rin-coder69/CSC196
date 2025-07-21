@@ -131,12 +131,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GAMIGN\Enemy.cpp" />
+    <ClCompile Include="GAMIGN\Player.cpp" />
+    <ClCompile Include="GAMIGN\SpaceGame.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Source\Engine\Engine.vcxproj">
       <Project>{654e9e57-0688-46b5-8435-17a383298e9e}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GAMIGN\Enemy.h" />
+    <ClInclude Include="GAMIGN\Player.h" />
+    <ClInclude Include="GAMIGN\SpaceGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

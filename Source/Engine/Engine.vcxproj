@@ -152,6 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor\Actor.cpp" />
+    <ClCompile Include="Actor\game.cpp" />
+    <ClCompile Include="Actor\Scene.cpp" />
     <ClCompile Include="Audio\AudioSystem.cpp" />
     <ClCompile Include="core\Time.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -161,18 +163,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor\Actor.h" />
+    <ClInclude Include="Actor\game.h" />
+    <ClInclude Include="Actor\Scene.h" />
     <ClInclude Include="Audio\AudioSystem.h" />
     <ClInclude Include="core\file.h" />
     <ClInclude Include="core\random.h" />
     <ClInclude Include="core\StringHelper.h" />
     <ClInclude Include="core\Time.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="Input\Inputsystem.h" />
     <ClInclude Include="Math\math.h" />
+    <ClInclude Include="Math\transform.h" />
     <ClInclude Include="Math\vector2.h" />
     <ClInclude Include="Math\vector3.h" />
     <ClInclude Include="Renderer\Model.h" />
     <ClInclude Include="Renderer\rendeder.h" />
-    <ClInclude Include="transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

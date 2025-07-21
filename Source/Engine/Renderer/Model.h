@@ -14,10 +14,10 @@ namespace gaia {
 			color{ color } {
 		}
 		void draw(class Renderer& renderer, const vec2& position, float roatation, float scale);
-		void Draw(class Renderer& renderer, const Transform& transform);
+		void draw(class Renderer& renderer, const Transform& transform);
 
 	private:
 		std::vector<gaia::vec2> points;
 		vec3 color{ 1.0f, 1.0f, 1.0f }; // Default color white
 		};
-}
+} 
