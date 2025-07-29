@@ -20,7 +20,28 @@ namespace gaia {
 		/// </summary>
 		/// <param name="deg"></param>
 		/// <returns></returns>
-		constexpr float degToRad(float deg) { return degToRad(deg) * (PI / 180); }
+		constexpr float degToRad(float deg) { return deg * (PI / 180); }
+
+		constexpr int wrap(int value, int min, int max) {
+			if (value > max) value = value - max;
+
+			int range = max - min;
+			int result = (value - min) % range;
+			if (result < 0) result += range;
+
+			return min + result;
+		}
+
+//Wrap function
+
+		inline float wrap(float value, float min, float max) {
+			float range = max - min;//calcylate range of a wrap
+			float result = std::fmodf(value - min, range);//shift value so range starts at zero
+			if (result < 0) result += range;//wrap forward if result is negative
+			return min + result;//shift result back to [min,max) range
+		}
+
+
 
 		using std::min;
 		using std::max;

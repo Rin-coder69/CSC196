@@ -33,7 +33,7 @@ namespace gaia{
 
 	bool AudioSystem::AddSound(const std::string& filename, const std::string& name) {
 		std::string key = (name.empty()) ? filename : name; // Use filename if no name provided
-		key = gaia::ToUpper(key); // Convert to uppercase for case-insensitive comparison
+		//key = gaia::tolower(key); // Convert to uppercase for case-insensitive comparison
 		//check if key exists in sounds map
 		if(m_sounds.find(key) != m_sounds.end()) {
 			// Sound with this name already exists
@@ -51,7 +51,7 @@ namespace gaia{
 	bool AudioSystem::PlaySound(const std::string& name)
 	{
 		std::string key = name; // Use the provided name directly
-		key = gaia::ToUpper(key); // Convert to uppercase for case-insensitive comparison
+		key = gaia::tolower(key); // Convert to uppercase for case-insensitive comparison
 
 		if(m_sounds.find(key) == m_sounds.end()) {
 			std::cerr << "Audio System : Sound not found " << name << std::endl;

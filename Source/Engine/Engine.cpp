@@ -1,5 +1,5 @@
 #include "Engine.h"
-#include "Renderer/rendeder.h"
+#include "Render/Renderer.h"
 #include "Input/InputSystem.h"
 #include "Audio/AudioSystem.h"
 namespace gaia{
@@ -12,42 +12,39 @@ namespace gaia{
 
 	bool Engine::Initialize() {
 		
-		renderer = std::make_unique<gaia::Renderer>();
-
-		renderer->Initialize();
-		renderer->CreateWindow("gaia Engine", 1280, 1024);
-
-
-		std::unique_ptr<gaia::InputSystem> inputSystem = std::make_unique<gaia::InputSystem>();
-		inputSystem->Initialize();
-
-
-
-		std::unique_ptr<gaia::AudioSystem> audio = std::make_unique<gaia::AudioSystem>();
-		audio->Initialize();
-
-		
-		
-		
 		// Initialize all subsystems
+		m_renderer = std::make_unique<gaia::Renderer>();
+
+		m_renderer->Initialize();
+		m_renderer->CreateWindow("gaia Engine", 1280, 1024);
+
+		m_input = std::make_unique<gaia::InputSystem>();
+		m_input->Initialize();
+
+		m_audio = std::make_unique<gaia::AudioSystem>();
+		m_audio->Initialize();
+				
 		return true;
-
-
-		}
+	}
 
 	void Engine::ShutDown() {
-		Audio->ShutDown();
-		renderer->ShutDown();
-		InputSystem->ShutDown();
-		SDL_Quit();
+		m_audio->ShutDown();
+		m_renderer->ShutDown();
+		m_input->ShutDown();
+
 		std::cout << "Engine shut down successfully." << std::endl;
 	}
 
 	void Engine::Update() {
 		time.Tick();
-		Audio->Update();
-		InputSystem->Update();
-		renderer->Clear();
+		m_audio->Update();
+		m_input->Update();
+	}
+
+	void Engine::Draw()
+	{
+		//renderer->Clear();
+
 	}
 	
 }

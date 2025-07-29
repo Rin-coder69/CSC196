@@ -12,25 +12,24 @@ namespace gaia {
 		Engine() = default;
 
 		bool Initialize();
-		void Update();
 		void ShutDown();
 
 		void Update();
 		void Draw();
 
-		Renderer& GetRenderer() const { return *renderer; }
-		AudioSystem& GetAudio() const { return *audio; }
-		InputSystem& GetInput() const { return *inputsystem; }
+		Renderer& GetRenderer() const { return *m_renderer; }
+		AudioSystem& GetAudio() const { return *m_audio; }
+		InputSystem& GetInput() const { return *m_input; }
 
 		Time& GetTime() { return time; }
 
 	private:
 		Time time;
-		std::unique_ptr<Renderer> renderer;
-		std::unique_ptr<AudioSystem> audio;
-		std::unique_ptr<InputSystem> inputsystem;
+		std::unique_ptr<Renderer> m_renderer;
+		std::unique_ptr<AudioSystem> m_audio;
+		std::unique_ptr<InputSystem> m_input;
 	};
 
 	Engine& GetEngine();
-	inLine Renderer& GetRenderer() { return GetEngine().GetRenderer(); }
+	inline Renderer& GetRenderer() {return GetEngine().GetRenderer(); }
 }

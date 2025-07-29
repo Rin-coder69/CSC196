@@ -14,7 +14,7 @@ namespace gaia {
 		/// <summary>
 		/// Generates a random integer value in the range [0, max).
 		///
-		int getRandomInt(int max) {
+		inline int getRandomInt(int max) {
 			return rand() % max;
 		}
 		/// <summary>
@@ -23,7 +23,7 @@ namespace gaia {
 		/// <param name="min">The lower bound of the range (inclusive).</param>
 		/// <param name="max">The upper bound of the range (inclusive).</param>
 		/// <returns>A random integer between min and max, inclusive.</returns>
-		 inline int getRandomInt(int min, int max) {
+		inline int getRandomInt(int min, int max) {
 			return min + getRandomInt(max - min + 1);
 		}
 		 /// <summary>
