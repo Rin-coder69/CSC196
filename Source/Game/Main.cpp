@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
 
 
 
-
+	gaia::file::SetCurrentDirectory("Assets");
 
 	gaia::GetEngine().Initialize();
 

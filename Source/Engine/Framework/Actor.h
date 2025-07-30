@@ -8,6 +8,7 @@ namespace gaia {
 	public:
 		std::string name;
 		std::string tag;
+
 		vec2 velocity{ 0,0 };
 		float damping{ 0.0f };
 		bool destroyed{ false };
@@ -20,8 +21,7 @@ namespace gaia {
 		Actor(const Transform& transform, class std:: shared_ptr<Model>model) :
 			transform{ transform },
 			m_model{model}
-		{
-		}
+		{}
 
 		virtual void Update(float dt);
 		virtual void Draw(class Renderer& renderer) const;

@@ -8,7 +8,7 @@ public:
 	enum class GameState {
 		Initialize,
 		Title,
-		StarGame,
+		StartGame,
 		Game,
 		PlayerDead,
 		GameOver,
@@ -26,5 +26,5 @@ private:
 	GameState m_gameState = GameState::Initialize;
 	float m_enemySpawnTimer{ 0 };
 
-std::unique_ptr<class gaia:Font* m_titleFont;
+std::unique_ptr<class gaia::Font* m_ttfFont;
 };

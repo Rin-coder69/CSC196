@@ -57,13 +57,4 @@ namespace gaia {
 		m_actors.clear();
 	}
 
-	Actor* Scene::GetActorByName(const std::string& name)
-	{
-		for (auto& actor : m_actors) {
-			if (tolower(actor->name) == tolower(name)) {
-				return actor.get();
-			}
-		}
-		return nullptr;
-	}
 }
