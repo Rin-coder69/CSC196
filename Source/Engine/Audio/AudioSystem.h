@@ -4,7 +4,6 @@
 #include <map>
 
 namespace gaia {
-	
 	class AudioSystem {
 	public:
 		AudioSystem() = default;

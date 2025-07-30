@@ -160,6 +160,7 @@
     <ClCompile Include="Framework\Scene.cpp" />
     <ClCompile Include="Input\InputSystem.cpp" />
     <ClCompile Include="Render\Font.cpp" />
+    <ClCompile Include="Render\Model.cpp" />
     <ClCompile Include="Render\Renderer.cpp" />
     <ClCompile Include="Render\Text.cpp" />
   </ItemGroup>

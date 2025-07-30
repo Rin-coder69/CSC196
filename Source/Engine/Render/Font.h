@@ -1,7 +1,7 @@
 #pragma once
+#include "Renderer.h"
 #include <iostream>
 #include <SDL3/SDL.h>
-#include "Renderer.h"
 struct TTF_Font;
 namespace gaia
 {

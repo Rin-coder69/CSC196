@@ -18,7 +18,7 @@ namespace gaia {
 		void draw(class Renderer& renderer, const Transform& transform);
 
 		float GetRadius() { return m_radius; }
-
+	private:
 		void CalculateRadius();
 
 	private:

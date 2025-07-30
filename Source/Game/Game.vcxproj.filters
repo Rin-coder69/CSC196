@@ -11,13 +11,10 @@
     <ClCompile Include="GAMIGN\Enemy.cpp">
       <Filter>GAMIGN</Filter>
     </ClCompile>
-    <ClCompile Include="..\Engine\Render\Model.cpp">
-      <Filter>GAMIGN</Filter>
-    </ClCompile>
     <ClCompile Include="gameData.cpp">
       <Filter>GAMIGN</Filter>
     </ClCompile>
-    <ClCompile Include="Rocket.cpp">
+    <ClCompile Include="GAMIGN\Rocket.cpp">
       <Filter>GAMIGN</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,7 +36,7 @@
     <ClInclude Include="gamedata.h">
       <Filter>GAMIGN</Filter>
     </ClInclude>
-    <ClInclude Include="Rocket.h">
+    <ClInclude Include="GAMIGN\Rocket.h">
       <Filter>GAMIGN</Filter>
     </ClInclude>
   </ItemGroup>

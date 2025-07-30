@@ -6,13 +6,17 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include "Actor.h"
 
 namespace gaia {
 	class Actor;
+	class Game;
 	class Scene {
 	public:
 
-		Scene() = default;
+		Scene(Game* game) : m_game{ game } {}
+			// Constructor that initializes the scene with a reference to the game
+		
 
 		//Scene(Game* game) : m_game{ game }{};
 
@@ -28,9 +32,12 @@ namespace gaia {
 		template<typename T = Actor>
 		std::vector<T*> GetActorsByTag(const std::string& tag);
 
+		class Game* GetGame() { return m_game; }
+
 	private:
-		//class Game* m_game{ nullptr };
-		std::vector<std::unique_ptr<Actor>> m_actors;
+		class Game* m_game{ nullptr };
+		std::list<std::unique_ptr<Actor>> m_actors;
+
 	};
 
 	template<typename T>
@@ -47,10 +54,10 @@ namespace gaia {
 		return nullptr;
 	}
 	template<typename T>
-	inline std::vector<T*> Scene::GetActorsByTag(const std::string& name)
+	inline std::vector<T*> Scene::GetActorsByTag(const std::string& tag)
 	{
 		std::vector<T*> results;
-		Actor* Scene::GetActorByName(const std::string& name)
+		Actor* Scene::GetActorByName(const std::string & tag);
 		for (auto& actor : m_actors) {
 			if (gaia::tolower(actor->tag) == gaia::tolower(tag)) {
 				T* object = dynamic_cast<T*>(actor.get());

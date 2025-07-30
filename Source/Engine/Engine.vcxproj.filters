@@ -62,6 +62,9 @@
     <ClCompile Include="Core\File.cpp">
       <Filter>Source\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Render\Model.cpp">
+      <Filter>Source\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Time.h">

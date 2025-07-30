@@ -9,6 +9,7 @@ public:
 		Initialize,
 		Title,
 		StartGame,
+		StartRound,
 		Game,
 		PlayerDead,
 		GameOver,
@@ -18,13 +19,21 @@ public:
 	bool Initialize() override;
 	void ShutDown() override;
 
-	void Update(float deltaTime) override;
+	void Update(float dt) override;
 	void Draw() override;
 
 private:
 	friend class Text;
 	GameState m_gameState = GameState::Initialize;
 	float m_enemySpawnTimer{ 0 };
+	std::shared_ptr<class gaia::Font> m_ttfFont;
+	std::shared_ptr<class gaia::Font> m_uiFont;
 
-std::unique_ptr<class gaia::Font* m_ttfFont;
-};
+
+	std::shared_ptr<class gaia::Text> m_titleText;
+	std::shared_ptr<class gaia::Text> m_scoreText;
+	std::shared_ptr<class gaia::Text> m_livesText;
+
+
+}
+

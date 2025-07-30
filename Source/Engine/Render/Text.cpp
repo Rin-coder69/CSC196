@@ -1,7 +1,4 @@
 #include "Text.h"
-#include "Renderer.h"
-#include "Font.h"
-#include "../Math/vector3.h"
 
 namespace gaia {
 	Text::~Text() {

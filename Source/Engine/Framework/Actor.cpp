@@ -8,8 +8,8 @@ void gaia::Actor::Update(float deltaTime) {
 
 	if (lifespan != 0) {
 		lifespan -= deltaTime;
-		if(lifespan)
-	}
+		destroyed = (lifespan <= 0);
+	}  
 	transform.position += velocity * deltaTime;
 	velocity *= (1.0f / 1.0f - damping * deltaTime);
 
@@ -21,8 +21,7 @@ void gaia::Actor::Draw(class Renderer& renderer) const {
 	}
 }
 
-float Actor::GetRadius()
+float gaia::Actor::GetRadius()
 {
-	return (m_model) ? m_model->GetRadius() : 0;
-}
+	return (m_model) ? m_model->GetRadius() * transform.scale  : 0;
 }

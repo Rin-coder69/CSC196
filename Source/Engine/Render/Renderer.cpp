@@ -27,6 +27,8 @@ namespace gaia
 
     bool Renderer::CreateWindow(const std::string& name, int width, int height)    {
         window = SDL_CreateWindow(name.c_str(), width, height, 0);
+		m_width = width;
+		m_height = height;
     if (window == nullptr) {
         std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
         SDL_Quit();

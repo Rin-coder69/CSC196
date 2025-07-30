@@ -1,11 +1,14 @@
 #pragma once
 #include "core/Time.h"
 #include <memory>
+
 #define RENDERER gaia::GetEngine().GetRenderer()
+
 namespace gaia {
 	class Renderer;
 	class AudioSystem;
 	class InputSystem;
+
 	class Engine {
 
 	public:
@@ -31,5 +34,5 @@ namespace gaia {
 	};
 
 	Engine& GetEngine();
-	inline Renderer& GetRenderer() {return GetEngine().GetRenderer(); }
+	//inline Renderer& GetRenderer() { return GetEngine().GetRenderer(); }
 }

@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\SDL3\include;;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\fmod\core\include;$(SolutionDir)Source\ThirdParty\SDL3\include;;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\SDL3\include;;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\fmod\core\include;$(SolutionDir)Source\ThirdParty\SDL3\include;;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -108,7 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\SDL3\include;C:\Neumont\CSC195pt2\CSC196\Source\Engine;$(SolutionDir)Source/Engine;%(AdditionalIncludeDirectories);$(SolutionDir)Source\Engine;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\fmod\core\include;$(SolutionDir)Source\ThirdParty\SDL3\include;C:\Neumont\CSC195pt2\CSC196\Source\Engine;$(SolutionDir)Source/Engine;%(AdditionalIncludeDirectories);$(SolutionDir)Source\Engine;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -125,7 +125,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\SDL3\include;;$(SolutionDir)Source\Engine;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\ThirdParty\fmod\core\include;$(SolutionDir)Source\ThirdParty\SDL3\include;;$(SolutionDir)Source\Engine;$(SolutionDir)Source\ThirdParty\fmod\core\inc</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,13 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Engine\Render\Model.cpp" />
     <ClCompile Include="gameData.cpp" />
     <ClCompile Include="GAMIGN\Enemy.cpp" />
     <ClCompile Include="GAMIGN\Player.cpp" />
+    <ClCompile Include="GAMIGN\Rocket.cpp" />
     <ClCompile Include="GAMIGN\SpaceGame.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Rocket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -155,8 +154,8 @@
     <ClInclude Include="gamedata.h" />
     <ClInclude Include="GAMIGN\Enemy.h" />
     <ClInclude Include="GAMIGN\Player.h" />
+    <ClInclude Include="GAMIGN\Rocket.h" />
     <ClInclude Include="GAMIGN\SpaceGame.h" />
-    <ClInclude Include="Rocket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,11 +12,22 @@ namespace gaia
 
 		bool Initialize();
 
+
 		void DrawPoint(float x, float y);
 
 		void ShutDown();
 
+
+
 		bool CreateWindow(const std::string& name, int width, int height);
+
+		int GetWidth() {
+			return m_width;
+		}
+
+		int GetHeight() {
+			return m_height;
+		}
 
 		void Clear();
 
@@ -28,7 +39,8 @@ namespace gaia
 	private:
 		SDL_Window* window = nullptr;//<---member variable for the SDL window
 		SDL_Renderer* renderer = nullptr;//<---member variable for the SDL renderer 
-
+		int m_width{ 800 }; // Default width
+		int m_height{ 600 }; // Default height
 		friend class Text;
 	};
 };

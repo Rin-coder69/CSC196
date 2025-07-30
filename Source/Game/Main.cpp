@@ -3,26 +3,31 @@
 #include "Render/Renderer.h"
 #include "core/random.h"
 #include "core/Time.h"
+#include "Core/File.h"
 #include "Input/InputSystem.h"
 #include "Audio/AudioSystem.h"
 #include "Math/Vector2.h"
-#include <SDL3/SDL.h>
 #include "Framework/Actor.h"
 #include "Math/Transform.h"
 #include "Render/Model.h"
+#include "Framework/Scene.h"
+#include "GAMIGN/Player.h"
+#include "Engine.h"
+#include "GAMIGN/SpaceGame.h"
+
+#include <SDL3/SDL.h>
 #include <vector>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <fmod.hpp>
 #include <memory>
-#include "Framework/Scene.h"
-#include "GAMIGN/Player.h"
-#include "Engine.h"
-#include "GAMIGN/SpaceGame.h"
-#include "../Engine/Core/File.h"
 
 int main(int argc, char* argv[]) {
+	//gaia::file::SetCurrentDirectory("Assets");
+
+	std::cout << "Gaia Engine - Space Game\n";
+	/*
 	// Get current directory path
 	std::cout << "Directory Operations:\n";
 	std::cout << "Current directory: " << gaia::file::GetCurrentDirectory() << "\n";
@@ -62,12 +67,8 @@ int main(int argc, char* argv[]) {
 	else {
 		std::cout << "Failed to read test.txt\n";
 	}
-
-
-
-
+	*/
 	gaia::file::SetCurrentDirectory("Assets");
-
 	gaia::GetEngine().Initialize();
 
 	std::unique_ptr<SpaceGame> game = std::make_unique<SpaceGame>();
@@ -79,7 +80,7 @@ int main(int argc, char* argv[]) {
 	//create stars
 	std::vector<gaia::vec2> stars;
 	for (int i = 0; i < 100; i++) {
-		stars.push_back(gaia::vec2{ gaia::Random::getRandomFloat() * 1200, gaia::Random::getRandomFloat() * 1024 });
+		stars.push_back(gaia::vec2{ gaia::random::getReal() * 1200, gaia::random::getReal() * 1024 });
 	};
 
 	while (!quit) {
@@ -114,18 +115,12 @@ int main(int argc, char* argv[]) {
 
 			if (star[0] > 1280) star[0] = 0;
 			if (star[0] < 0) star[0] = 1280;
-			gaia::GetEngine().GetRenderer().SetColor(gaia::Random::getRandomInt(256), gaia::Random::getRandomInt(256), gaia::Random::getRandomInt(256));
+			gaia::GetEngine().GetRenderer().SetColor(gaia::random::getReal(256.0f), gaia::random::getReal(256.0f), gaia::random::getReal(256.0f));
 			gaia::GetEngine().GetRenderer().DrawPoint(star.x, star.y);
 		}
 
 		gaia::GetEngine().GetRenderer().Present();
 	}
-
-
-
-
-
-	//gaia::file::SetCurrentDirectory("Assets");
 
 
 	gaia::GetEngine().ShutDown();
