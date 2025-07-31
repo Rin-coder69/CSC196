@@ -10,10 +10,16 @@ namespace gaia
             std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
             return false;
         }
+        if(!TTF_Init()) {
+            std::cerr << "TTF_Init Error: " << SDL_GetError() << std::endl;
+            return false;
+		}
 
         return true;
+
     }
 
+   
   
 
     void Renderer::DrawPoint(float x, float y)
@@ -73,6 +79,7 @@ namespace gaia
     };
 
     void  Renderer:: ShutDown() {
+		TTF_Quit();
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);
         SDL_Quit();

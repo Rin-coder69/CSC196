@@ -17,10 +17,10 @@ bool SpaceGame::Initialize()
     m_scene = std::make_unique<gaia::Scene>(this);
 		// Initialize fonts
 	m_ttfFont = std::make_shared<gaia::Font>();
-	m_ttfFont->Load("assets/fonts/arial.ttf", 128);
+	m_ttfFont->Load("ArcadeClassic.ttf", 128);
 
 	m_uiFont = std::make_shared<gaia::Font>();
-	m_ttfFont->Load("assets/fonts/arial.ttf", 48);
+	m_uiFont->Load("ArcadeClassic.ttf", 48);
 
 
 	m_titleText = std::make_unique<gaia::Text>(m_ttfFont);
@@ -99,6 +99,10 @@ void SpaceGame::Update(float dt)
     void SpaceGame::Draw()
     {
         m_scene->Draw(gaia::GetEngine().GetRenderer());
+        m_titleText->Create(gaia::GetEngine().GetRenderer(), "Hello Gaia Engine!", gaia::vec3{ 1.0f, 1.0f, 1.0f });
+
+		gaia::GetEngine().GetRenderer().SetColor(0.0f, 0.0f, 0.0f);
+        m_titleText->Draw(gaia::GetEngine().GetRenderer(), 40.0f, 40.0f);
     }
 
     void SpaceGame::ShutDown()

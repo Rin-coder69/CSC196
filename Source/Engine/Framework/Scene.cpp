@@ -11,7 +11,7 @@ namespace gaia {
 		for (auto& actor : m_actors) {
 			actor->Update(deltaTime);
 		}
-		for (auto iter = m_actors.begin(); iter != m_actors.end(); iter++) {
+		for (auto iter = m_actors.begin(); iter != m_actors.end();) {
 			if ((*iter)->destroyed) {
 				iter = m_actors.erase(iter);
 			}

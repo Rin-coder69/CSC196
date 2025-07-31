@@ -35,5 +35,5 @@ private:
 	std::shared_ptr<class gaia::Text> m_livesText;
 
 
-}
+};
 

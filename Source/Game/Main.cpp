@@ -14,7 +14,7 @@
 #include "GAMIGN/Player.h"
 #include "Engine.h"
 #include "GAMIGN/SpaceGame.h"
-
+#include "Render/Font.h"
 #include <SDL3/SDL.h>
 #include <vector>
 #include <iostream>
@@ -25,6 +25,39 @@
 
 int main(int argc, char* argv[]) {
 	//gaia::file::SetCurrentDirectory("Assets");
+
+	 // Test getInt() variants
+	std::cout << "Integer Functions:\n";
+	std::cout << "getInt(): " << gaia::random::getInt() << "\n";
+	std::cout << "getInt(): " << gaia::random::getInt() << "\n";
+	std::cout << "getInt(10): " << gaia::random::getInt(10) << "\n";
+	std::cout << "getInt(10): " << gaia::random::getInt(10) << "\n";
+	std::cout << "getInt(5, 15): " << gaia::random::getInt(5, 15) << "\n";
+	std::cout << "getInt(5, 15): " << gaia::random::getInt(5, 15) << "\n";
+	std::cout << "getInt(-10, 10): " << gaia::random::getInt(-10, 10) << "\n\n";
+
+	// Test getReal() variants with float
+	std::cout << "Float Functions:\n";
+	std::cout << std::fixed << std::setprecision(6);
+	std::cout << "getReal<float>(): " << gaia::random::getReal<float>() << "\n";
+	std::cout << "getReal<float>(): " << gaia::random::getReal<float>() << "\n";
+	std::cout << "getReal<float>(5.0f): " << gaia::random::getReal<float>(5.0f) << "\n";
+	std::cout << "getReal<float>(2.5f, 7.5f): " << gaia::random::getReal<float>(2.5f, 7.5f) << "\n";
+	std::cout << "getReal<float>(-1.0f, 1.0f): " << gaia::random::getReal<float>(-1.0f, 1.0f) << "\n\n";
+
+	// Test getReal() variants with double
+	std::cout << "Double Functions:\n";
+	std::cout << std::setprecision(10);
+	std::cout << "getReal<double>(): " << gaia::random::getReal<double>() << "\n";
+	std::cout << "getReal<double>(100.0): " << gaia::random::getReal<double>(100.0) << "\n";
+	std::cout << "getReal<double>(0.0, 2.0): " << gaia::random::getReal<double>(0.0, 2.0) << "\n\n";
+
+	// Test getBool()
+	std::cout << "Boolean Functions:\n";
+	for (int i = 0; i < 10; ++i) {
+		std::cout << "getBool(): " << std::boolalpha << gaia::random::getBool() << "\n";
+	}
+	std::cout << "\n";
 
 	std::cout << "Gaia Engine - Space Game\n";
 	/*
@@ -69,7 +102,15 @@ int main(int argc, char* argv[]) {
 	}
 	*/
 	gaia::file::SetCurrentDirectory("Assets");
+
 	gaia::GetEngine().Initialize();
+	/*gaia::Font* font = new gaia::Font();
+	font->Load("ArcadeClassic.ttf", 20);*/
+
+	
+	//text->Create(gaia::GetEngine().GetRenderer(), "Hello Gaia Engine!", gaia::vec3{ 1.0f, 1.0f, 1.0f });
+
+
 
 	std::unique_ptr<SpaceGame> game = std::make_unique<SpaceGame>();
 	game->Initialize();
@@ -102,6 +143,7 @@ int main(int argc, char* argv[]) {
 		gaia::vec3 color{ 0,0,0 };
 
 		gaia::GetEngine().GetRenderer().SetColor(color.x, color.y, color.z);
+	
 		gaia::GetEngine().GetRenderer().Clear();
 
 		//draw game
@@ -122,7 +164,8 @@ int main(int argc, char* argv[]) {
 		gaia::GetEngine().GetRenderer().Present();
 	}
 
-
+	game->ShutDown();
+	game.release();
 	gaia::GetEngine().ShutDown();
 
 	return 0;

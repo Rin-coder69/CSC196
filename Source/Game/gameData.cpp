@@ -6,7 +6,7 @@ namespace GameData {
       {-4, -3},
       {-2, 0},
       {-4, 3},
-      {5, 0}
+      {-5, -5}
     };
 
     std::vector<gaia::vec2> enemyPoints{
