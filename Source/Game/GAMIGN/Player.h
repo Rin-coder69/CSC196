@@ -2,6 +2,9 @@
 #include "Framework/Actor.h"
 
 class Player : public gaia::Actor {
+	enum class WeaponType { Rocket, Laser };
+	WeaponType currentWeapon = WeaponType::Rocket;
+
 
 public:
 	float speed = 200;

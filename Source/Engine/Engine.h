@@ -8,6 +8,7 @@ namespace gaia {
 	class Renderer;
 	class AudioSystem;
 	class InputSystem;
+	class ParticleSystem;
 
 	class Engine {
 
@@ -23,6 +24,7 @@ namespace gaia {
 		Renderer& GetRenderer() const { return *m_renderer; }
 		AudioSystem& GetAudio() const { return *m_audio; }
 		InputSystem& GetInput() const { return *m_input; }
+		ParticleSystem& GetParticleSystem() const { return *m_particleSystem; }
 
 		Time& GetTime() { return time; }
 
@@ -31,6 +33,7 @@ namespace gaia {
 		std::unique_ptr<Renderer> m_renderer;
 		std::unique_ptr<AudioSystem> m_audio;
 		std::unique_ptr<InputSystem> m_input;
+		std::unique_ptr<ParticleSystem> m_particleSystem;
 	};
 
 	Engine& GetEngine();

@@ -5,6 +5,12 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include "../Math/vector2.h"
+#include "../Math/vector3.h"
+#include "../Math/math.h"
+#include "../Core/StringHelper.h"
+#include "../Core/Time.h"
+
 
 /// <summary>
 ///         
@@ -58,5 +64,8 @@ namespace gaia::random {
     inline bool getBool() {
         static std::bernoulli_distribution dist(0.5);
         return dist(generator());
+    }
+    inline vec2 onUnitCircle() {
+
     }
 }

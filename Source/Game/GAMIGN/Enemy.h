@@ -5,6 +5,8 @@
 class Enemy : public gaia::Actor {
 public:
 	float speed = 200;
+	float fireTime = 0;
+	float fireTimer = 0;
 public:
 	Enemy() = default;
 	Enemy(const gaia::Transform& transform, std::shared_ptr<class gaia::Model> model) :

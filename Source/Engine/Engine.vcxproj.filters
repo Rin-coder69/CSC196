@@ -65,6 +65,9 @@
     <ClCompile Include="Render\Model.cpp">
       <Filter>Source\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Render\Particlesystem.cpp">
+      <Filter>Source\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Time.h">
@@ -119,6 +122,9 @@
       <Filter>Source\Render</Filter>
     </ClInclude>
     <ClInclude Include="Render\Text.h">
+      <Filter>Source\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\particlesystem.h">
       <Filter>Source\Render</Filter>
     </ClInclude>
   </ItemGroup>

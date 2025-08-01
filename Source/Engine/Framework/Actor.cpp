@@ -23,5 +23,5 @@ void gaia::Actor::Draw(class Renderer& renderer) const {
 
 float gaia::Actor::GetRadius()
 {
-	return (m_model) ? m_model->GetRadius() * transform.scale  : 0;
+	return (m_model) ? m_model->GetRadius() * transform.scale * 0.9f  : 0;
 }

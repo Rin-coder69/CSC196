@@ -20,12 +20,14 @@ public:
 	void ShutDown() override;
 
 	void Update(float dt) override;
-	void Draw() override;
+	void Draw(class gaia::Renderer& renderer) override ;
 
+	void OnPlayerDeath();
 private:
 	friend class Text;
 	GameState m_gameState = GameState::Initialize;
 	float m_enemySpawnTimer{ 0 };
+	float m_stateTimer{ 0 };
 	std::shared_ptr<class gaia::Font> m_ttfFont;
 	std::shared_ptr<class gaia::Font> m_uiFont;
 

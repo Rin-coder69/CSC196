@@ -139,8 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="gameData.cpp" />
     <ClCompile Include="GAMIGN\Enemy.cpp" />
+    <ClCompile Include="GAMIGN\gameData.cpp" />
+    <ClCompile Include="GAMIGN\Laser.cpp" />
     <ClCompile Include="GAMIGN\Player.cpp" />
     <ClCompile Include="GAMIGN\Rocket.cpp" />
     <ClCompile Include="GAMIGN\SpaceGame.cpp" />
@@ -155,8 +156,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gamedata.h" />
     <ClInclude Include="GAMIGN\Enemy.h" />
+    <ClInclude Include="GAMIGN\gamedata.h" />
+    <ClInclude Include="GAMIGN\Laser.h" />
     <ClInclude Include="GAMIGN\Player.h" />
     <ClInclude Include="GAMIGN\Rocket.h" />
     <ClInclude Include="GAMIGN\SpaceGame.h" />

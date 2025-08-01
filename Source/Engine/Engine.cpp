@@ -2,6 +2,8 @@
 #include "Render/Renderer.h"
 #include "Input/InputSystem.h"
 #include "Audio/AudioSystem.h"
+#include "Render/particlesystem.h"
+
 namespace gaia{
 
 	Engine& GetEngine()
@@ -23,12 +25,13 @@ namespace gaia{
 
 		m_audio = std::make_unique<gaia::AudioSystem>();
 		m_audio->Initialize();
-
-		
+		m_particleSystem = std::make_unique<gaia::ParticleSystem>();
+		m_particleSystem->Initialize(5000);
 		return true;
 	}
 
 	void Engine::ShutDown() {
+		m_particleSystem->ShutDown();
 		m_audio->ShutDown();
 		m_renderer->ShutDown();
 		m_input->ShutDown();
@@ -40,6 +43,7 @@ namespace gaia{
 		time.Tick();
 		m_audio->Update();
 		m_input->Update();
+		m_particleSystem->Update(time.GetDeltaTime());
 	}
 
 	void Engine::Draw()

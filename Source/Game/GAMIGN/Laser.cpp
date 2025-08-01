@@ -1,4 +1,4 @@
-#include "Rocket.h"	
+#include "Laser.h"
 #include "Engine.h"
 #include "Framework/Scene.h"
 #include "Render/Renderer.h"
@@ -11,20 +11,20 @@
 
 
 
-void Rocket::Update(float dt)
+void Laser::Update(float dt)
 {
-	gaia::vec2 force = gaia::vec2{ 1,0 }.Rotate(gaia::math::degToRad(transform.rotation)); 
+	gaia::vec2 force = gaia::vec2{ 1,0 }.Rotate(gaia::math::degToRad(transform.rotation));
 	velocity += (force * speed) * dt;
 
 	transform.position.x = gaia::math::wrap(transform.position.x, 0.0f, (float)gaia::GetEngine().GetRenderer().GetWidth());
 	transform.position.y = gaia::math::wrap(transform.position.y, 0.0f, (float)gaia::GetEngine().GetRenderer().GetHeight());
 
-	
-		Actor::Update(dt);
+
+	Actor::Update(dt);
 }
 
 
-void Rocket::OnCollision(Actor* other)
+void Laser::OnCollision(Actor* other)
 {
 	std::cout << other->tag << std::endl;
 	if (other->tag != tag) {

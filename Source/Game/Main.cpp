@@ -143,11 +143,10 @@ int main(int argc, char* argv[]) {
 		gaia::vec3 color{ 0,0,0 };
 
 		gaia::GetEngine().GetRenderer().SetColor(color.x, color.y, color.z);
-	
 		gaia::GetEngine().GetRenderer().Clear();
 
 		//draw game
-		game->Draw();
+		game->Draw(gaia::GetEngine().GetRenderer());
 
 		// stars
 		gaia::vec2 speed{ -40.0f,0 };

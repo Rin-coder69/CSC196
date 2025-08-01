@@ -11,10 +11,13 @@
     <ClCompile Include="GAMIGN\Enemy.cpp">
       <Filter>GAMIGN</Filter>
     </ClCompile>
-    <ClCompile Include="gameData.cpp">
+    <ClCompile Include="GAMIGN\Rocket.cpp">
       <Filter>GAMIGN</Filter>
     </ClCompile>
-    <ClCompile Include="GAMIGN\Rocket.cpp">
+    <ClCompile Include="GAMIGN\gameData.cpp">
+      <Filter>GAMIGN</Filter>
+    </ClCompile>
+    <ClCompile Include="GAMIGN\Laser.cpp">
       <Filter>GAMIGN</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,10 +36,13 @@
     <ClInclude Include="GAMIGN\SpaceGame.h">
       <Filter>GAMIGN</Filter>
     </ClInclude>
-    <ClInclude Include="gamedata.h">
+    <ClInclude Include="GAMIGN\Rocket.h">
       <Filter>GAMIGN</Filter>
     </ClInclude>
-    <ClInclude Include="GAMIGN\Rocket.h">
+    <ClInclude Include="GAMIGN\gamedata.h">
+      <Filter>GAMIGN</Filter>
+    </ClInclude>
+    <ClInclude Include="GAMIGN\Laser.h">
       <Filter>GAMIGN</Filter>
     </ClInclude>
   </ItemGroup>
